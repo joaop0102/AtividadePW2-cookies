@@ -31,7 +31,6 @@
       ?>
 
       <?php
-        // Adapte a mensagem para a exclusão do cookie
         if (isset($_COOKIE[$cookie_valor])) {
           setcookie($cookie_valor, "", $expiracao_passada);
           echo "<p class='success'>Cookie '" . $cookie_valor . "' excluído com sucesso!</p>";
