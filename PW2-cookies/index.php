@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manipulção cookies</title>
+    <title>Cookies</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -34,15 +34,15 @@
 
       <div id="Area">
         <form method="post" action="cookies.php"> 
-          <h1>Manipulção de Cookies</h1> 
+          <h1>Cookies</h1> 
           
           <p> 
-            <label for="nome_cookies" >Nome para armazenar no cookie</label>
+            <label for="nome_cookies" >Nome do cookie</label>
             <input id="nome_cookies" name="nome_cookies" required="required" type="text" placeholder="<?=$nomeUsuario?>" <?=$disable2?>/>
           </p>
           
           <p> 
-            <label for="alt_cookies" >Alterar nome no cookie</label>
+            <label for="alt_cookies" >Alterar nome do cookie</label>
             <input id="alt_cookies" name="alt_cookies" required="required" type="text"  placeholder="<?=$nomeUsuario?>" <?=$disable?>/> 
           </p>
           
