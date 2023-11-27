@@ -1,44 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PW2 Cookies</title>
-  <link rel="stylesheet" href="estilo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulção cookies</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Atividade com Cookies</h1>
-    
-    <?php
-      $cookie_nome = "joao";
-      $expiracao_passada = time() - 3600;
-      $cookie_valor = "123";
+    <?php 
+     $nomeUsuario ="";
+     $disable = "";
+     $disable2 = "";
+  
+    if(isset($_COOKIE['usuario'])){
+        if(empty($_COOKIE['usuario'])){
+            $nomeUsuario = "???";
+        }else{
+        $nomeUsuario = $_COOKIE['usuario'];}
+        $disable = "";
+        $disable2 = "disabled";
 
-      
-      setcookie($cookie_nome, $cookie_valor, time() + 3600, "/", "AtividadePW2-Cookies");
-      echo "<p class='success'>Cookie '" . $cookie_nome . "' criado com sucesso!</p>";
+    }
+    if (!isset($_COOKIE['usuario'])) {
+        $nomeUsuario = "cookie foi excluído com sucesso!";
+        $disable = "disabled";
+        $disable2 = "";
+    }
+    
     ?>
-    
-    <div class="message">
-      <?php
-        if (!isset($_COOKIE[$cookie_nome])) {
-          echo "<p class='success'>Cookie '" . $cookie_nome . "' está definido!</p>";
-        } else {
-          echo "<p class='error'>Cookie '" . $cookie_nome . "' está definido!<br>";
-          echo "Valor é: " . $_COOKIE[$cookie_nome] . "</p>";
-        }
-      ?>
+<div class="container" >
 
-      <?php
-        if (isset($_COOKIE[$cookie_valor])) {
-          setcookie($cookie_valor, "", $expiracao_passada);
-          echo "<p class='success'>Cookie '" . $cookie_valor . "' excluído com sucesso!</p>";
-        } else {
-          echo "<p class='error'>Cookie '" . $cookie_valor . "' não estava definido, não foi excluído!</p>";
-        }
-      ?>
+    <div class="content">      
+
+      <div id="Area">
+        <form method="post" action="cookies.php"> 
+          <h1>Manipulção de Cookies</h1> 
+          
+          <p> 
+            <label for="nome_cookies" >Nome para armazenar no cookie</label>
+            <input id="nome_cookies" name="nome_cookies" required="required" type="text" placeholder="<?=$nomeUsuario?>" <?=$disable2?>/>
+          </p>
+          
+          <p> 
+            <label for="alt_cookies" >Alterar nome no cookie</label>
+            <input id="alt_cookies" name="alt_cookies" required="required" type="text"  placeholder="<?=$nomeUsuario?>" <?=$disable?>/> 
+          </p>
+          
+  
+          <p> 
+            <input class="salv" type="submit" value="Salvar"/> 
+          </p>
+
+        </form>
+        <form method="post" action="cookies.php"> 
+                <button><input type="submit" name="excluir" value="Excluir cookies"/> </button>
+                </form>
+                <p class="link">
+                Olá, <?=$nomeUsuario?></p>
+      </div>
     </div>
-  </div>
+  </div> 
+
+    
 </body>
 </html>
