@@ -85,7 +85,7 @@ button{
   width: 100%; 
   padding: 15px; 
   font-size: 16px;
-  text-align: right;
+  text-align: center;
   border-top: 1px solid #bdc3c7; 
   border-radius: 0 0 8px 8px; 
 }
