@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manipulção cookies</title>
+    <title>Cookies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -34,15 +37,15 @@
 
       <div id="Area">
         <form method="post" action="cookies.php"> 
-          <h1>Manipulção de Cookies</h1> 
+          <h1 style="text-align: center;">Cookies</h1> 
           
           <p> 
-            <label for="nome_cookies" >Nome para armazenar no cookie</label>
+            <label for="nome_cookies" >Nome do cookie</label>
             <input id="nome_cookies" name="nome_cookies" required="required" type="text" placeholder="<?=$nomeUsuario?>" <?=$disable2?>/>
           </p>
           
           <p> 
-            <label for="alt_cookies" >Alterar nome no cookie</label>
+            <label for="alt_cookies" >Alterar nome do cookie</label>
             <input id="alt_cookies" name="alt_cookies" required="required" type="text"  placeholder="<?=$nomeUsuario?>" <?=$disable?>/> 
           </p>
           
@@ -53,10 +56,12 @@
 
         </form>
         <form method="post" action="cookies.php"> 
-                <button><input type="submit" name="excluir" value="Excluir cookies"/> </button>
-                </form>
-                <p class="link">
-                Olá, <?=$nomeUsuario?></p>
+            <div  style="text-align: center;">
+                <button ><input class="btn btn-primary" type="submit" name="excluir" value="Excluir cookies"/> </button>
+           </div>
+        </form>
+              <p class="link">
+              Olá, <?=$nomeUsuario?></p>
       </div>
     </div>
   </div> 
